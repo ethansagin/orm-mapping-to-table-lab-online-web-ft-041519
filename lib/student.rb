@@ -26,7 +26,10 @@ class Student
   end
   
   def save
-    INSERT   
+    sql = <<-SQL
+      INSERT INTO students (
+      
+    SQL
   end
   
 end
