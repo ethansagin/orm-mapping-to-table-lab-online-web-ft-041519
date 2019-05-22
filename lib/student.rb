@@ -1,4 +1,4 @@
-class Students
+class Student
   attr_accessor :name, :grade
   attr_reader :id 
   
@@ -36,10 +36,9 @@ class Students
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM songs")[0][0]
   
   def self.create(name:, grade:)
-    Students.new(name, grade)
-    self.save
-    self
-
+    student = Student.new(name, grade)
+    student.save
+    student 
   end
   
 end
